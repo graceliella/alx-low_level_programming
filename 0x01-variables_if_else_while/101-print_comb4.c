@@ -7,7 +7,6 @@
  * 012, 120, 102, 021, 201, 210 are considered the same combination.
  * Print only the smallest combination of three digits
  * Numbers should be printed in ascending order, with three digits
- * You can only use the putchar function (every other function 
  * You can only use putchar six times maximum in your code
  * You are not allowed to use any variable of type char
  * Return: 0
