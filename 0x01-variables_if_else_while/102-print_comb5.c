@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main - main block
- * Description: prtint all possible combinations of two two-digit numbers.
+ * main - Prints multiple combinations
+ * Description: Write a program that prints all possible
  * Return: 0
  */
 int main(void)
@@ -23,7 +23,7 @@ int main(void)
 						putchar(' ');
 						putchar(c);
 						putchar(d);
-				if (!(a == '9' && b == '8'))
+						if (!(a == '9' && b == '8'))
 						{
 							putchar(',');
 							putchar(' ');
@@ -34,6 +34,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }
