@@ -1,47 +1,29 @@
 #include "main.h"
-/**
- * _isdigit - Check for digits (0 through 9)
- * @c: int type param
- * Return: 1 if digit, else 0
- */
-int _isdigit(int c)
-{
-	if (c > 47 && c < 58)
-		return (1);
-
-	return (0);
-}
-
 
 /**
- * _atoi - program to converst ASCII to integer
- * @s: pointer to array of character
- * Return: Always successful
+ * _atoi - convert a string into an integer.
+ *
+ * @s: the string to use.
+ *
+ * Return: integer.
  */
 
 int _atoi(char *s)
 {
-	int digit;
-	int count = 0;
-	int sign = 1;
-	unsigned int value = 0;
-	unsigned int pos = 1;
+	int sign = 1, i = 0;
+	unsigned int res = 0;
 
-	for (digit = 0; ((s[digit] < '0') || (s[digit] > '9')); digit++)
+	while (!(s[i] <= '9' && s[i] >= '0') && s[i] != '\0')
 	{
-		if (s[digit] == '-')
+		if (s[i] == '-')
 			sign *= -1;
+		i++;
 	}
-	for (; _isdigit(s[digit]); digit++)
+	while (s[i] <= '9' && (s[i] >= '0' && s[i] != '\0'))
 	{
-		count++;
+		res = (res * 10) + (s[i] - '0');
+		i++;
 	}
-	while (count > 0)
-	{
-		value += ((s[digit - 1] - 48) * pos);
-		pos *= 10;
-		count--;
-		digit--;
-	}
-	return (value * sign);
+	res *= sign;
+	return (res);
 }
