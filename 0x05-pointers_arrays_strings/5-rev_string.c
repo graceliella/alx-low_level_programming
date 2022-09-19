@@ -1,19 +1,47 @@
 #include "main.h"
 
 /**
- * puts2 - print one char out of 2 of a string
- * @str: char array string type
- * Description: Print 1st char, then 3rd, then 5th, etc..
+ * _strlen - returns the length of the string -1
+ * @s: the string to get the length
+ *
+ * Return: lenght of the string
  */
-
-void puts2(char *str)
+int _strlen(char *s)
 {
-	int a;
+	int counter = 0;
+	int a = 0;
 
-	for (a = 0; str[a] != '\0'; a++)
+	while (s[a] != '\0')
 	{
-		if (a % 2 == 0)
-			_putchar(str[a]);
+		++counter;
+		++a;
 	}
-	_putchar('\n');
+	--counter;
+	return (counter);
+}
+
+/**
+ * rev_string - prints a string in reverse order
+ * @s: the string to count down from
+ *
+ * Description: Reverses the string in memory
+ * Return: void
+ */
+void rev_string(char *s)
+{
+
+	int b, c;
+	int length = _strlen(s);
+	char holder;
+
+	b = 0;
+	c = length;
+	while (c >= b)
+	{
+		holder = s[b];
+		s[b] = s[c];
+		s[c] = holder;
+		c--;
+		b++;
+	}
 }
