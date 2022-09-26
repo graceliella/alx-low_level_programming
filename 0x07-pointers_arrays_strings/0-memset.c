@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * *_memset - set memory function
  * @s: pointer to array
